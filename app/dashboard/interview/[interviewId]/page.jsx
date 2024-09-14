@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 function Interview({ params }) {
   const [interviewData, setInterviewData] = useState([]);
@@ -114,11 +115,12 @@ function Interview({ params }) {
         </motion.div>
       </div>
 
-      {/* Centered button section */}
       <div className="flex justify-center items-center mt-10">
-        <Button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:shadow-xl w-[300px]">
-          Start Interview
-        </Button>
+        <Link href={"/dashboard/interview/" + params.interviewId + "/start"}>
+          <Button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:shadow-xl w-[300px]">
+            Start Interview
+          </Button>
+        </Link>
       </div>
     </motion.div>
   );
